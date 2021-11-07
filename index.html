@@ -11,68 +11,79 @@
 
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid px-0">
   <div class="row">
     <div class="col-12">
           <h1>Comment Filtering Software</h1>
 </div>
 </div>
-  <div class="row">
-    <div class="col-3">
-    <h3>Real Comments</h3>
-  </div>
-    <div class="col-3">
-    <h3>Posted Comments</h3>
-  </div>
-    <div class="col-3">
-    <h3>Submit Comments</h3>
-  </div>
-    <div class="col-3">
-    <h3>About</h3>
-  </div>
-</div>
 
 <div class="row">
+  <div class="col-12">
+<nav class="navbar navbar-expand-lg navbar-light " style='background-color: #97A7B3'>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Comment Filtering Software</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href='real.html'>Real Comments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="post.html">Posted Comments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Submit Comments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Login</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
+</div>
+</div>
+
+<div class="container-fluid">
+
+<div class="row mt-5">
   <div class="col-12">
 <h2>Submit A Comment</h2>
 </div>
 </div>
 
-<div class="row">
+
+<div class="row mt-3">
   <div class="col-12">
-<h4>Name</h4>
+<form>
+  <div class="mb-3">
+    <label for="inputName" class="form-label">Name</label>
+    <input type="username" class="form-control" id="inputName" placeholder="Name">
+  </div>
+  <div class="mb-3">
+  <label for="email" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="email" placeholder="Email">
+  <div id="emailNote" class="form-text">We'll never share your email with anyone else.</div>
 </div>
+<div class="mb-3">
+  <label for="commentsArea" class="form-label">Comments</label>
+  <textarea class="form-control" id="commentsArea" rows="3" placeholder="Type your review here"></textarea>
 </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="robotCheck">I am not a robot!</label>
+  </div>
+  <button type="submit" class="btn btn-outline-secondary">Submit</button>
+</form>
 
-<div class="row">
-  <div class="col-12">
-<p class="name"></p>
-</div>
-</div>
-
-
-<div class="row">
-  <div class="col-12">
-<h4>Email</h4>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-<p class="email"></p>
-</div>
-</div>
-
-
-<div class="row">
-  <div class="col-12">
-<h4>Comments</h4>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-<p class="commentsInput"></p>
 </div>
 </div>
 
