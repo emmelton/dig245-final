@@ -1,20 +1,41 @@
-
 /* javascript */
 
-document.querySelectorAll('#commentForm input');
-Array.form(document.querySelectorAll('#commentForm input')).reduce((acc, input) => ({ ...acc, [input.id]: input.value }), {});
+// document.querySelectorAll('#commentForm input');
+// Array.form(document.querySelectorAll('#commentForm input')).reduce((acc, input) => ({
+//   ...acc,
+//   [input.id]: input.value
+// }), {});
+//
+//
+// function game() {
+//
+//   let str = '';
+//   let r = Math.floor(Math.random() * data.length);
+//   str += `var name = ${data[r].time}`
+//
+//
+//   var name = "Pieter";
+//   console.log(name.replace("good", "bad"));
+//
+//   var input = "[input from user]";
+//   var ourIntriguingString = ourInterestingString.replace("interesting", "intriguing");
+//   console.log(ourIntriguingString);
 
 
-function game() {
+  const commentForm = document.getElementById('commentForm');
 
-  let str = '';
-  let r = Math.floor(Math.random() * data.length);
-  str += `var name = ${data[r].time}`
+  commentForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
+    const formData = new FormData(this);
 
-  var name = "Pieter";
-console.log(name.replace("good", "bad"));
-
-var input = "[input from user]";
-var ourIntriguingString = ourInterestingString.replace("interesting", "intriguing");
-console.log(ourIntriguingString);
+    fetch('login.php', {
+      method: 'post',
+      body: formData }).then(function(response) {
+        return response.text().then(function (text) {
+          console.log(text);
+        }).catch(function (error) {
+          console.error(error);
+        })
+      }
+  });
