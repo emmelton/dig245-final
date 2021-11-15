@@ -12,7 +12,7 @@ var submission = {
 var pastSubmission;
 
 // load homepage by default
-$("rotation").load('pages/submission.html');
+$("rotation").load('pages/submit.html');
 
 // click event to display real comments page
 $(document).on('click', '.displayRealPage', function() {
@@ -41,7 +41,7 @@ if (answer == 'name') {
   console.log('answers', answers);
 
   //one page is laoded then its data can be updated
-  $('#rotation').load('views/post.html', function() {
+  $('#rotation').load('pages/post.html', function() {
 
     // get a reference to the site where the submissions will load
     var subs = document.getElementById('submissions').getContext('2d');
