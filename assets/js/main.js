@@ -2,10 +2,13 @@
 
 //variables to store each input and comment
 var submission = {
-  "name": [],
-  "email": [],
-  "comment": []
+  "name": "",
+  "email": "",
+  "comment": ""
 };
+
+var name = "";
+var comment = "";
 
 
 // to remmeber previous answers
@@ -14,9 +17,20 @@ var pastSubmission;
 // load homepage by default
 $("rotation").load('pages/submit.html');
 
-// click event to display real comments page
-$(document).on('click', '.displayRealPage', function() {
-  $('rotation').load('pages/real.html');
+// document.getElementById('test').onclick().load('pages/submit.html');
+
+// click event to display submit page
+$(document).on('click', '#homeBtn', function() {
+  $('#rotation').load('pages/submit.html');
+});
+
+//click event to display real page
+$(document).on('click', '#submitBtn', function() {
+//  $('#rotation').load('pages/real.html, pages/post.html');
+//access value of text area and store the input
+userComment = $("commentsArea").text();
+
+//if you put "userComment" inside the () of text, it sets the value there
 });
 
 // display the real comments pages
