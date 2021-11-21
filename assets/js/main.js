@@ -29,28 +29,28 @@ $(document).on('click', '#submitBtn', function() {
   $('rotation').load('pages/real.html');
 });
 
-  // window.onload = function () {
-  //      document.getElementById("submitBtn").addEventListener("click", function () {
-  //        fetch("/api/v1/", {
-  //          headers: {
-  //            Accept: "application/json",
-  //            "Content-Type": "application/json",
-  //          },
-  //          method: "POST",
-  //          body: JSON.stringify({
-  //            text: document.getElementById("text").value,
-  //          }),
-  //        })
-  //          .then((res) => res.json())
-  //          .then((data) => {
-  //            document.getElementById("resp").innerText = JSON.stringify(
-  //              data,
-  //              null,
-  //              2
-  //            );
-  //          });
-  //      });
-  //    };
+  window.onload = function () {
+       document.getElementById("submitBtn").addEventListener("click", function () {
+         fetch("/api/v1/", {
+           headers: {
+             Accept: "application/json",
+             "Content-Type": "application/json",
+           },
+           method: "POST",
+           body: JSON.stringify({
+             text: document.getElementById("text").value,
+           }),
+         })
+           .then((res) => res.json())
+           .then((data) => {
+             document.getElementById("resp").innerText = JSON.stringify(
+               data,
+               null,
+               2
+             );
+           });
+       });
+     };
 
 
 
