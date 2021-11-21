@@ -26,60 +26,89 @@ $(document).on('click', '#homeBtn', function() {
 
 //click event to display real page
 $(document).on('click', '#submitBtn', function() {
+  $('rotation').load('pages/real.html');
+});
+
+  // window.onload = function () {
+  //      document.getElementById("submitBtn").addEventListener("click", function () {
+  //        fetch("/api/v1/", {
+  //          headers: {
+  //            Accept: "application/json",
+  //            "Content-Type": "application/json",
+  //          },
+  //          method: "POST",
+  //          body: JSON.stringify({
+  //            text: document.getElementById("text").value,
+  //          }),
+  //        })
+  //          .then((res) => res.json())
+  //          .then((data) => {
+  //            document.getElementById("resp").innerText = JSON.stringify(
+  //              data,
+  //              null,
+  //              2
+  //            );
+  //          });
+  //      });
+  //    };
+
+
+
+
 //  $('#rotation').load('pages/real.html, pages/post.html');
 //access value of text area and store the input
-userComment = $("commentsArea").text();
-
-//if you put "userComment" inside the () of text, it sets the value there
-});
-
-// display the real comments pages
-$(document).on('submit', '#commentForm', function() {
-
-// track entries
-var answer = $('input[name=name]:written').val();
-//store the answer to show in case they go back
-pastSubmission = answer;
-// testing
-console.log('submission was', answer);
-
-// add entry in list of entries
-if (answer == 'name') {
-  answers.nameText ++;
-} else if (answer == 'email'){
-  answers.emailText ++;
-} else if (answer == 'comment'){
-  answers.commentText ++;
-  //testing
-}
-  console.log('answers', answers);
-
-  //one page is laoded then its data can be updated
-  $('#rotation').load('pages/post.html', function() {
-
-    // get a reference to the site where the submissions will load
-    var subs = document.getElementById('submissions').getContext('2d');
-
-    // create the list of submissiosn and supply settings
-
-    var submissions = new Submission(subs, {
-      type: 'text',
-      data: {
-        labels: ["Name", "Comment"],
-        datasets: [{
-          label: 'Responses',
-          data: [
-            answers.nameText,
-            answers.emailText,
-            answers.commentText
-          ],
-        }]
-
-      }
-    });
-  });
-
-});
+// userComment = $("commentsArea").text();
+//
+// //if you put "userComment" inside the () of text, it sets the value there
+// });
+//
+// // display the real comments pages
+// $(document).on('submit', '#commentForm', function() {
+//
+// // track entries
+// var answer = $('input[name=name]:written').val();
+// //store the answer to show in case they go back
+// pastSubmission = answer;
+// // testing
+// console.log('submission was', answer);
+//
+// // add entry in list of entries
+// if (answer == 'name') {
+//   answers.nameText ++;
+// } else if (answer == 'email'){
+//   answers.emailText ++;
+// } else if (answer == 'comment'){
+//   answers.commentText ++;
+//   //testing
+// }
+//   console.log('answers', answers);
+//
+//   //one page is laoded then its data can be updated
+//   $('#rotation').load('pages/post.html', function() {
+//
+//     // get a reference to the site where the submissions will load
+//     var subs = document.getElementById('submissions').getContext('2d');
+//
+//     // create the list of submissiosn and supply settings
+//
+//     var submissions = new Submission(subs, {
+//       type: 'text',
+//       data: {
+//         labels: ["Name", "Comment"],
+//         datasets: [{
+//           label: 'Responses',
+//           data: [
+//             answers.nameText,
+//             answers.emailText,
+//             answers.commentText
+//           ],
+//         }]
+//
+//       }
+//     });
+//   });
+//
+// });
 
 
 
