@@ -22,7 +22,7 @@ $(document).on('click', '#homeBtn', function() {
 
 //click event to display real page
 $(document).on('click', '#submitBtn', function() {
-  $('rotation').load('pages/subs.html');
+  $('rotation').load('pages/posts.html');
 });
 
   window.onload = function () {
