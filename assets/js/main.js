@@ -3,12 +3,8 @@
 //variables to store each input and comment
 var submission = {
   "name": "",
-  "email": "",
   "comment": ""
 };
-
-var name = "";
-var comment = "";
 
 
 // to remmeber previous answers
@@ -26,19 +22,20 @@ $(document).on('click', '#homeBtn', function() {
 
 //click event to display real page
 $(document).on('click', '#submitBtn', function() {
-  $('rotation').load('pages/real.html');
+  $('rotation').load('pages/subs.html');
 });
 
   window.onload = function () {
        document.getElementById("submitBtn").addEventListener("click", function () {
-         fetch("/api/v1/", {
+         fetch("https://sentim-api.herokuapp.com/api/v1/", {
            headers: {
              Accept: "application/json",
              "Content-Type": "application/json",
            },
            method: "POST",
            body: JSON.stringify({
-             text: document.getElementById("text").value,
+             nameText: document.getElementById('inputName').value,
+             commentText: document.getElementById("commentsArea").value,
            }),
          })
            .then((res) => res.json())
