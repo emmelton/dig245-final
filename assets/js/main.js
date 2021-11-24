@@ -108,15 +108,6 @@ $(document).on('click', '#submitBtn', function() {
 // });
 
 
-
-
-
-
-
-
-
-
-
 // document.querySelectorAll('#commentForm input');
 // Array.form(document.querySelectorAll('#commentForm input')).reduce((acc, input) => ({
 //   ...acc,
