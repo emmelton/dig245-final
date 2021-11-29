@@ -16,7 +16,8 @@ $("rotation").load('pages/submit.html');
 // document.getElementById('test').onclick().load('pages/submit.html');
 
 // click event to display submit page
-$(document).on('click', '#homeBtn', function() {
+
+document.ready("homeBtn").on('click', '#homeBtn', function() {
   $('#rotation').load('pages/submit.html');
 });
 
@@ -25,8 +26,11 @@ $(document).on('click', '#submitBtn', function() {
   $('rotation').load('pages/posts.html');
 });
 
-  window.onload = function () {
-       document.getElementById("submitBtn").addEventListener("click", function () {
+
+       document.ready("submitBtn").on("click", function () {
+         $(document).on("submit","#commentForm", function(e){
+            e.preventDefault();
+
          fetch("https://sentim-api.herokuapp.com/api/v1/", {
            headers: {
              Accept: "application/json",
@@ -46,6 +50,7 @@ $(document).on('click', '#submitBtn', function() {
                2
              );
            });
+           return false;
        });
      };
 
