@@ -17,43 +17,41 @@ $("rotation").load('pages/submit.html');
 
 // click event to display submit page
 
-document.ready("homeBtn").on()
 $(document).on('click', '#homeBtn', function() {
   $('#rotation').load('pages/submit.html');
 });
 
 //click event to display real page
-$(document).on('click', '#submitBtn', function() {
-  $('rotation').load('pages/posts.html');
+$(document).on('click', '#submitBtn', function(e) {
+  e.preventDefault();
+  $('#rotation').load('pages/posts.html');
+
+
+console.log(
+$('#commentsArea').val()
+);
+
+  // fetch("https://sentim-api.herokuapp.com/api/v1/", {
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       nameText: document.getElementById('inputName').value,
+  //       commentText: document.getElementById("commentsArea").value,
+  //     }),
+  //   })
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     document.getElementById("resp").innerText = JSON.stringify(
+  //       data,
+  //       null,
+  //       2
+  //     );
+  //   });
+  return false;
 });
-
-
-       document.ready("submitBtn").on("click", function () {
-         $(document).on("submit","#commentForm", function(e){
-            e.preventDefault();
-
-         fetch("https://sentim-api.herokuapp.com/api/v1/", {
-           headers: {
-             Accept: "application/json",
-             "Content-Type": "application/json",
-           },
-           method: "POST",
-           body: JSON.stringify({
-             nameText: document.getElementById('inputName').value,
-             commentText: document.getElementById("commentsArea").value,
-           }),
-         })
-           .then((res) => res.json())
-           .then((data) => {
-             document.getElementById("resp").innerText = JSON.stringify(
-               data,
-               null,
-               2
-             );
-           });
-           return false;
-       });
-     });
 
 
 
@@ -136,20 +134,20 @@ $(document).on('click', '#submitBtn', function() {
 //   console.log(ourIntriguingString);
 
 
-  // const commentForm = document.getElementById('commentForm');
-  //
-  // commentForm.addEventListener('submit', function(e) {
-  //   e.preventDefault();
-  //
-  //   const formData = new FormData(this);
-  //
-  //   fetch('login.php', {
-  //     method: 'post',
-  //     body: formData }).then(function(response) {
-  //       return response.text().then(function (text) {
-  //         console.log(text);
-  //       }).catch(function (error) {
-  //         console.error(error);
-  //       })
-  //     }
-  // });
+// const commentForm = document.getElementById('commentForm');
+//
+// commentForm.addEventListener('submit', function(e) {
+//   e.preventDefault();
+//
+//   const formData = new FormData(this);
+//
+//   fetch('login.php', {
+//     method: 'post',
+//     body: formData }).then(function(response) {
+//       return response.text().then(function (text) {
+//         console.log(text);
+//       }).catch(function (error) {
+//         console.error(error);
+//       })
+//     }
+// });
