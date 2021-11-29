@@ -17,7 +17,8 @@ $("rotation").load('pages/submit.html');
 
 // click event to display submit page
 
-document.ready("homeBtn").on('click', '#homeBtn', function() {
+document.ready("homeBtn").on()
+$(document).on('click', '#homeBtn', function() {
   $('#rotation').load('pages/submit.html');
 });
 
@@ -52,7 +53,7 @@ $(document).on('click', '#submitBtn', function() {
            });
            return false;
        });
-     };
+     });
 
 
 
