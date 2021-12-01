@@ -23,52 +23,78 @@ $(document).on('click', '#homeBtn', function() {
 
 //click event to display real page
 $(document).on('click', '#submitBtn', function(e) {
-e.preventDefault();
-$('#rotation').load('pages/posts.html');
+  e.preventDefault();
+  $('#rotation').load('pages/posts.html');
 
 
-console.log(
-  $('#commentsArea').val()
-);
+  console.log(
+    $('#commentsArea').val()
+  );
 
-fetch("https://sentim-api.herokuapp.com/api/v1/", {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    method: "POST",
-    body: JSON.stringify({
-      "text": $('#commentsArea').val(),
-    }),
-  })
-  .then((res) => res.json())
-  .then((data) => {
+  fetch("https://sentim-api.herokuapp.com/api/v1/", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        "text": $('#commentsArea').val(),
+      }),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+
+      console.log(data);
+      $('.result').html(data);
+
+
+      var getUserInput = function sentimentResult() {
+        var lines = [];
+
+        $('#commentsArea').each(function() {
+          lines.push($(this).val().split('\n'));
+        });
+
+        // var responseData = "#commentsArea".value;
+        // var result = data.result.type;
+
+        for (let i = 0; i < responseData.sentences.length; i++) {
+          if (results.sentences[i].sentiment.type) {
+            sentences++;
+          }
+
+          console.log('sentimentResult()');
+          return sentimentResult();
+
+        }
+
+      };
 
 
 
+      return false;
 
-  });
+    });
 
-return false;
 });
 
+// if result.sentences.length is greater than zero
+// loop through sentences
+// do something with each sentence
 
 //
 // console.log(data);
 // $('.result').html(data);
 //
-// // if result.sentences.length is greater than zero
-// // loop through sentences
-// // do something with each sentence
 //
 //
-// // function example() {
-// // results.sentences[i].sentiment.type
-// // }
+// function example() {
+// results.sentences[i].sentiment.type
+// }
 //
-// // function sentimentResult() {
-// // var responseData = "#commentsArea".value;
-// // var result = data.result.type;
+// function sentimentResult() {
+// var responseData = "#commentsArea".value;
+// var result = data.result.type;
 //
 //
 // for (let i = 0; i < responseData.sentences.length; i++) {
@@ -81,33 +107,33 @@ return false;
 //
 // }
 //
-// //
-// //
-// // function sentimentResult() {
-// //   var responseData = data;
-// //   var result = data.result.type;
-// //
-// //
-// //   for (let i = 0; i > -1; i++) {
-// //     text += "Your sentence was" + data.result.type;
-// //   }
-// //   if (data[i].result.type) {}
-// // }
-// //
 //
 //
-// //
-// //           function sentimentResult() {
-// //             let str = '';
-// //             str += `
-// // <div class='row center mt-4'>
-// //   <div class="col-12">
-// //     <p>${data[i].result.type}'<br></p>
-// //   </div>
-// // </div>`
-// //
-// //             return str;
-// //           }
+// function sentimentResult() {
+//   var responseData = data;
+//   var result = data.result.type;
+//
+//
+//   for (let i = 0; i > -1; i++) {
+//     text += "Your sentence was" + data.result.type;
+//   }
+//   if (data[i].result.type) {}
+// }
+//
+//
+//
+//
+//           function sentimentResult() {
+//             let str = '';
+//             str += `
+// <div class='row center mt-4'>
+//   <div class="col-12">
+//     <p>${data[i].result.type}'<br></p>
+//   </div>
+// </div>`
+//
+//             return str;
+//           }
 //
 //
 //
