@@ -1,2 +1,31 @@
 
 /* css */
+
+button.startDemoBtn {
+  padding: 15px 25px 15px 25px;
+  border: 10px;
+  font-family: Bowlby One, cursive;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+  background-color: #FFE5A3;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  letter-spacing: 8px;
+}
+
+button.startDemoBtn:hover {
+  background-color: #E0C377
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+button.startDemoBtn:active {
+  background-color: #E0C377;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  text-decoration: none;
+}
