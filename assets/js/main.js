@@ -81,6 +81,30 @@ let negativePosts = [{
   }
 ];
 
+let positiveEmojiResponse = [{
+  emoji: "☺️"
+},
+{
+  emoji: "😄"
+},
+{
+  emoji: "😆"
+},
+];
+
+let negativeEmojiResponse = [{
+  emoji: "😒"
+},
+{
+  emoji: "😤"
+},
+{
+  emoji: "😞"
+},
+];
+
+
+
 //function for making the positive words appear...?
 function returnExamplePost(arr) {
 
@@ -138,12 +162,14 @@ $(document).on('click', '#submitBtn', function(e) {
       if (data.sentences.length > 0) {
         for (var i = 0; i < data.sentences.length; i++) {
           console.log(data.sentences[i]);
-          str += `${data.sentences[i].sentiment.type} - ${data.sentences[i].sentence} <br>`
+          str += `${negativeEmojiResponse} + ${data.sentences[i].sentiment.type} - ${data.sentences[i].sentence} <br>`;
         }
 
       }
 
+
       $('.result').html(str);
+
 
     });
 

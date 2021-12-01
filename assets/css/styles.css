@@ -1,7 +1,7 @@
 
 /* css */
 
-button.startDemoBtn {
+.btn {
   padding: 15px 25px 15px 25px;
   border: 10px;
   font-family: Bowlby One, cursive;
@@ -10,20 +10,20 @@ button.startDemoBtn {
   text-decoration: none;
   outline: none;
   color: #000000;
-  background-color: #FFE5A3;
+  background-color: #E0C377;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
   letter-spacing: 8px;
 }
 
-button.startDemoBtn:hover {
+.btn:hover {
   background-color: #E0C377
   color: #FFFFFF;
   text-decoration: none;
 }
 
-button.startDemoBtn:active {
+.btn:active {
   background-color: #E0C377;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
