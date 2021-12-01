@@ -13,7 +13,7 @@
 
 
 // array of positive comments to input
-let positive = [{
+let positivePosts = [{
     text: "I love your dress! You look so cute in that!"
   },
   {
@@ -49,7 +49,7 @@ let positive = [{
 ];
 
 // array of negative comments to input
-let negative = [{
+let negativePosts = [{
     text: "I hate your dress! Please buy something else."
   },
   {
@@ -82,53 +82,21 @@ let negative = [{
 ];
 
 //function for making the positive words appear...?
-function positiveSelection() {
+function returnExamplePost(arr) {
 
-  let str = '';
-  let r = Math.floor(Math.random() * positive.length);
-  str += `
-  <div class="mb-3">
-    <label for="commentsArea" class="form-label">Comments</label>
-    <textarea class="form-control" id="commentsArea" rows="3" required>${positive[r].text}</textarea>
-  </div>
-  `;
+  let r = Math.floor(Math.random() * arr.length);
 
-  return str;
+  return arr[r].text;
 }
 
-function postSelection() {
-  var select = document.getElementById('selectSentiment').innerHTML = positiveSelection();
-}
 
-$(document).on('select', 'positive', function() {
-  $(document.getElementById('selectSentiment').innerHTML = positiveSelection());
+$(document).on('click', '#positiveBtn', function() {
+  $('#commentsArea').val(returnExamplePost(positivePosts));
 });
 
-
-//function for making the negative words appear...?
-function negativeSelection() {
-
-  let str = '';
-  let r = Math.floor(Math.random() * negative.length);
-  str += `
-  <div class="mb-3">
-    <label for="commentsArea" class="form-label">Comments</label>
-    <textarea class="form-control" id="commentsArea" rows="3" required>${negative[r].text}</textarea>
-  </div>
-  `;
-
-  return str;
-}
-
-
-function postSelection() {
-  var select = document.getElementById('selectSentiment').innerHTML = negativeSelection();
-}
-
-$(document).on('select', 'negative', function() {
-  $(document.getElementById('selectSentiment').innerHTML = negativeSelection());
+$(document).on('click', '#negativeBtn', function() {
+  $('#commentsArea').val(returnExamplePost(negativePosts));
 });
-
 
 
 // load homepage by default
@@ -145,12 +113,10 @@ $(document).on('click', '#homeBtn', function() {
 //click event to display real page
 $(document).on('click', '#submitBtn', function(e) {
   e.preventDefault();
+  var commentsAreaText = $('#commentsArea').val();
+
   $('#rotation').load('pages/posts.html');
 
-
-  console.log(
-    $('#commentsArea').val()
-  );
 
   fetch("https://sentim-api.herokuapp.com/api/v1/", {
       headers: {
@@ -159,43 +125,31 @@ $(document).on('click', '#submitBtn', function(e) {
       },
       method: "POST",
       body: JSON.stringify({
-        "text": $('#commentsArea').val(),
+        "text": commentsAreaText,
       }),
     })
     .then((res) => res.json())
     .then((data) => {
 
       console.log(data);
-      $('.result').html(data);
 
+      let str = '';
 
-      var getUserInput = function sentimentResult() {
-        var lines = [];
-
-        $('#commentsArea').each(function() {
-          lines.push($(this).val().split('\n'));
-        });
-
-        // var responseData = "#commentsArea".value;
-        // var result = data.result.type;
-
-        for (let i = 0; i < responseData.sentences.length; i++) {
-          if (results.sentences[i].sentiment.type) {
-            sentences++;
-          }
-
-          console.log('sentimentResult()');
-          return sentimentResult();
-
+      if (data.sentences.length > 0) {
+        for (var i = 0; i < data.sentences.length; i++) {
+          console.log(data.sentences[i]);
+          str += `${data.sentences[i].sentiment.type} - ${data.sentences[i].sentence} <br>`
         }
 
-      };
+      }
 
-
-
-      return false;
+      $('.result').html(str);
 
     });
+
+  return false;
+
+
 });
 
 
