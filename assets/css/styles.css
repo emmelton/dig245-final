@@ -1,7 +1,7 @@
 
 /* css */
 
-.btn {
+h2 {
   padding: 15px 25px 15px 25px;
   border: 10px;
   font-family: Bowlby One, cursive;
@@ -10,22 +10,178 @@
   text-decoration: none;
   outline: none;
   color: #000000;
-  background-color: #E0C377;
+  /* background-color: #E0C377;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
-  letter-spacing: 8px;
+  letter-spacing: 8px; */
 }
 
-.btn:hover {
-  background-color: #E0C377
+
+/* NAV BAR ANIMATION */
+.navbar .navbar-nav .nav-link:hover {
+  color: #000000;
+}
+@media only screen and (min-width: 960px) {
+  .navbar .navbar-nav .nav-link {
+    padding: 1em 0.7em;
+  }
+  .navbar {
+    padding: 0;
+  }
+  .navbar .navbar-brand {
+    padding: 0 0.7em;
+  }
+}
+.navbar .navbar-nav .nav-link {
+  position: relative;
+}
+.navbar .navbar-nav .nav-link::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #FDBEB4;
+  color: transparent;
+  width: 0%;
+  content: '';
+  height: 3px;
+  transition: all 0.5s;
+}
+.navbar .navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+/* END NAV ANIMATION */
+
+.webTitle {
+  padding: 12px 24px 12px 24px;
+  border: 10px;
+  text-size: 25px;
+  font-family: Bowlby One, cursive;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+}
+
+/* DEMO BUTTON */
+.btn-info {
+  background-color: #EB9486;
+  border: none;
+  width: 30%;
+}
+
+.btn-info:hover {
+  background-color: #EAB792;
   color: #FFFFFF;
   text-decoration: none;
 }
 
-.btn:active {
-  background-color: #E0C377;
+.btn-info:active {
+  background-color: #EAB792;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
   text-decoration: none;
+}
+
+/*POSITIVE COMMENT BUTTON*/
+.btn-light {
+  background-color: #5988AB;
+  border: none;
+
+}
+
+.btn-light:hover {
+  background-color: #7E7F9A;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn-light:active {
+  background-color: #7E7F9A;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  text-decoration: none;
+}
+
+.btn-light:focus {
+  background-color: #7E7F9A;
+}
+
+/*NEGATIVE COMMENT BUTTON*/
+.btn-warning {
+  background-color: #7A8A6C;
+  border: none;
+
+}
+
+.btn-warning:hover {
+  background-color: #BDAB7D;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn-warning:active {
+  background-color: #BDAB7D;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  text-decoration: none;
+}
+
+.btn-warning:focus {
+  background-color: #BDAB7D;
+}
+
+/* RESULT FORMATTING */
+
+.resultSentence {
+  padding: 12px 24px 12px 24px;
+  border: 10px;
+  text-size: 15px;
+  font-family: Sunflower, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+}
+
+.result {
+  padding: 12px 24px 12px 24px;
+  border: 10px;
+  text-size: 30px;
+  font-family: Yaldevi, sans-serif;
+  margin-left: 80px;
+  margin-right: 80px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+}
+
+@media screen and (max-width: 2800px) {
+  .webTitle {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .webTitle {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .webTitle {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .webTitle {
+    font-size: 12px;
+  }
 }

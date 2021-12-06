@@ -82,30 +82,75 @@ let negativePosts = [{
 ];
 
 let positiveEmojiResponse = [{
-  text: "☺️ — "
+  text: "☺️"
 },
 {
-  text: "😄 — "
+  text: "😄"
 },
 {
-  text: "😆 — "
+  text: "😆"
+},
+{
+  text: "🥰"
+},
+{
+  text: "😁"
+},
+{
+  text: "😀"
+},
+{
+  text: "🙂"
+},
+{
+  text: "😌"
+},
+{
+  text: "😋"
 },
 ];
 
 let negativeEmojiResponse = [{
-  text: "😒 — "
+  text: "😒"
 },
 {
-  text: "😤 — "
+  text: "😤"
 },
 {
-  text: "😞 — "
+  text: "😞"
+},
+{
+  text: "😟"
+},
+{
+  text: "😕"
+},
+{
+  text: "😠"
+},
+{
+  text: "😡"
+},
+{
+  text: "🤬"
 },
 ];
 
 let neutralEmojiResponse = [{
-  text: "😐 — "
-}
+  text: "😶"
+},
+{
+  text: "🤭"
+},
+{
+  text: "😐"
+},
+{
+  text: "🙄"
+},
+{
+  text: "🤭"
+},
 ];
 
 
@@ -136,6 +181,10 @@ $("rotation").load('pages/submit.html');
 // click event to display submit page
 
 $(document).on('click', '#homeBtn', function() {
+  $('#rotation').load('pages/submit.html');
+});
+
+$(document).on('click', '#backBtn', function() {
   $('#rotation').load('pages/submit.html');
 });
 
@@ -181,18 +230,22 @@ for (var i = 0; i < data.sentences.length; i++) {
     // conditions
     if (data.sentences[i].sentiment.type == "positive") {
         console.log(data.sentences[i].sentiment.type);
-        str+= `${positiveEmojiResponse[i]} - ${data.sentences[i].sentiment.type} ${data.sentences[i].sentence} <br>}`;
+        //positive
+        str+= `${returnRandomArrayIndex(positiveEmojiResponse).text} — Your sentence { <em>${data.sentences[i].sentence}</em> } earned a <strong>${data.sentences[i].sentiment.type}</strong> sentiment after our analysis. <br><br>`;
     } else if (data.sentences[i].sentiment.type == "negative") {
-        str+= `${negativeEmojiResponse[i]} - ${data.sentences[i].sentiment.type} ${data.sentences[i].sentence} <br>}`;
+      //negative
+        str+= `${returnRandomArrayIndex(negativeEmojiResponse).text} — Your sentence { <em>${data.sentences[i].sentence}</em> } earned a <strong>${data.sentences[i].sentiment.type}</strong> sentiment after our analysis. <br><br>`;
     } else {
-        str+= `${neutralEmojiResponse[i]} - ${data.sentences[i].sentiment.type} ${data.sentences[i].sentence} <br>}`;
+      //neutral
+        str+= `${returnRandomArrayIndex(neutralEmojiResponse).text} — Your sentence { <em>${data.sentences[i].sentence}</em> } earned a <strong>${data.sentences[i].sentiment.type}</strong> sentiment after our analysis. <br><br>`;
     }
+
 }
 
-
-
-
-
+// make emoji response a random chance
+function returnRandomArrayIndex(arr){
+    return arr[Math.floor(Math.random() * arr.length)];
+}
 
 // PSEUDOCODE
 //if type of sentence is 'positive'
@@ -212,31 +265,6 @@ for (var i = 0; i < data.sentences.length; i++) {
 // print the sentiment to the post page (neutral)
 // pass the neutralEmojiResponse array and print the one emoji choice
 // print the emoji next to the data result
-
-
-// CODE FOR IF ODDS WERE NEGATIVE AND EVENS WERE POSITIVE... PRINT EMOJI DEPENDING ON EVEN OR ODD INDEX?
-      // if (data.sentences.length > 0 && data.sentences == [1, 3, 5, 7, 9, 11]) {
-      //   for (var i = 0; i < data.sentences.length; i++) {
-      //     console.log(data.sentences[i]);
-      //     str += `${negativeEmojiResponse} — ${data.sentences[i].sentiment.type} - ${data.sentences[i].sentence} <br>`;
-      //   }
-      // }
-
-// CODE FOR PRINTING EMOJI RESPONSE OFF OF ORIGINAL CODE CONCLUSION?
-      // if (data.sentences.sentiment.type = 'positive') {
-      //   for (var i = 0; i < data.sentences.sentiment.type; i++) {
-      //     console.log(data.sentences.sentiment.type[i]);
-      //     str+= `${positiveEmojiResponse[i]} - ${data.sentences[i].sentence} <br>}`
-      //   }
-      // }
-      //
-      // if (data.sentences.sentiment.type = 'negative') {
-      //   for (var i = 0; i < data.sentences.sentiment.type; i++) {
-      //     console.log(data.sentences.sentiment.type[i]);
-      //     str+= `${negativeEmojiResponse[i]} - ${data.sentences[i].sentence} <br>}`
-      //   }
-      // }
-
 
       $('.result').html(str);
 

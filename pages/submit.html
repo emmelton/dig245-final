@@ -1,12 +1,17 @@
-<h2 style='text-align: center'>Comment Submission</h2>
+<h2 style='text-align: center'>Analyze A Comment</h2>
 <div class='container-fluid'>
   <div class="row mt-3">
     <div class="col-12">
       <form id='commentForm' action='real.html' method='post'>
 
-<button type="button" name="negative" id='negativeBtn'>Get A Negative Comment</button>
-<button type="button" name="positive" id='positiveBtn'>Get A Positive Comment</button>
-
+<div class='row'>
+<div class='col-4 offset-3'>
+<button type="button" class="btn btn-warning" name="negative" id='negativeBtn'>Get A Negative Comment</button>
+</div>
+<div class='col-2'>
+<button type="button" class='btn btn-light' name="positive" id='positiveBtn'>Get A Positive Comment</button>
+</div>
+</div>
 
         <div class="mb-3">
           <label for="commentsArea" class="form-label">Comments</label>
