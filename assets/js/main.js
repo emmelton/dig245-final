@@ -172,6 +172,48 @@ $(document).on('click', '#submitBtn', function(e) {
       //   }
       // }
 
+
+// LOOP FOR EMOJIS
+// loop through all the sentences
+for (var i = 0; i < data.sentences.length; i++) {
+    // print in console
+    console.log(data.sentences[i].sentiment.type, data.sentences[i].sentence);
+    // conditions
+    if (data.sentences[i].sentiment.type == "positive") {
+        console.log(data.sentences[i].sentiment.type);
+        str+= `${positiveEmojiResponse[i]} - ${data.sentences[i].sentiment.type} ${data.sentences[i].sentence} <br>}`;
+    } else if (data.sentences[i].sentiment.type == "negative") {
+        str+= `${negativeEmojiResponse[i]} - ${data.sentences[i].sentiment.type} ${data.sentences[i].sentence} <br>}`;
+    } else {
+        str+= `${neutralEmojiResponse[i]} - ${data.sentences[i].sentiment.type} ${data.sentences[i].sentence} <br>}`;
+    }
+}
+
+
+
+
+
+
+// PSEUDOCODE
+//if type of sentence is 'positive'
+// log the sentence
+// print the sentiment to the post page
+// pass positiveEmoji array and print a positive emoji from the array
+// print the emoji next to the data result
+
+//if type of sentence is 'negative'
+// log the sentence
+// print the sentiment to the post page
+// pass the negativeEmojiResponse array and print a negative emoji from the array
+// print the emoji next to the data result
+
+// else if neither
+// log the sentnece
+// print the sentiment to the post page (neutral)
+// pass the neutralEmojiResponse array and print the one emoji choice
+// print the emoji next to the data result
+
+
 // CODE FOR IF ODDS WERE NEGATIVE AND EVENS WERE POSITIVE... PRINT EMOJI DEPENDING ON EVEN OR ODD INDEX?
       // if (data.sentences.length > 0 && data.sentences == [1, 3, 5, 7, 9, 11]) {
       //   for (var i = 0; i < data.sentences.length; i++) {
@@ -181,19 +223,19 @@ $(document).on('click', '#submitBtn', function(e) {
       // }
 
 // CODE FOR PRINTING EMOJI RESPONSE OFF OF ORIGINAL CODE CONCLUSION?
-      if (data.sentences.sentiment.type = positive) {
-        for (var i = 0; i < data.sentences.sentiment.type; i++) {
-          console.log(data.sentences.sentiment.type[i]);
-          str+= `${positiveEmojiResponse[i]} - ${data.sentences[i].sentence} <br>}`
-        }
-      }
-
-      if (data.sentences.sentiment.type = negative) {
-        for (var i = 0; i < data.sentences.sentiment.type; i++) {
-          console.log(data.sentences.sentiment.type[i]);
-          str+= `${negativeEmojiResponse[i]} - ${data.sentences[i].sentence} <br>}`
-        }
-      }
+      // if (data.sentences.sentiment.type = 'positive') {
+      //   for (var i = 0; i < data.sentences.sentiment.type; i++) {
+      //     console.log(data.sentences.sentiment.type[i]);
+      //     str+= `${positiveEmojiResponse[i]} - ${data.sentences[i].sentence} <br>}`
+      //   }
+      // }
+      //
+      // if (data.sentences.sentiment.type = 'negative') {
+      //   for (var i = 0; i < data.sentences.sentiment.type; i++) {
+      //     console.log(data.sentences.sentiment.type[i]);
+      //     str+= `${negativeEmojiResponse[i]} - ${data.sentences[i].sentence} <br>}`
+      //   }
+      // }
 
 
       $('.result').html(str);
