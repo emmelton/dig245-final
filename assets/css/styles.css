@@ -134,6 +134,11 @@ h2 {
   background-color: #BDAB7D;
 }
 
+/* BACK BUTTON */
+.btn-outline-dark {
+  text-align: center;
+}
+
 /* RESULT FORMATTING */
 
 .resultSentence {
@@ -146,6 +151,16 @@ h2 {
   text-decoration: none;
   outline: none;
   color: #000000;
+}
+
+p {
+    font-family: Yaldevi, sans-serif;
+}
+
+h3 {
+  font-family: Sunflower, sans-serif;
+  font-size: 25px;
+  text-align: center;
 }
 
 .result {
@@ -182,6 +197,6 @@ h2 {
 
 @media screen and (max-width: 600px) {
   .webTitle {
-    font-size: 12px;
+    font-size: 18px;
   }
 }
