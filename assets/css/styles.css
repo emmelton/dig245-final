@@ -74,13 +74,13 @@ h2 {
 }
 
 .btn-info:hover {
-  background-color: #EAB792;
+  background-color: #F1BCB3;
   color: #FFFFFF;
   text-decoration: none;
 }
 
 .btn-info:active {
-  background-color: #EAB792;
+  background-color: #F1BCB3;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
   text-decoration: none;
@@ -88,19 +88,19 @@ h2 {
 
 /*POSITIVE COMMENT BUTTON*/
 .btn-light {
-  background-color: #5988AB;
+  background-color: #97A7B3;
   border: none;
 
 }
 
 .btn-light:hover {
-  background-color: #7E7F9A;
+  background-color: #BDCCD8;
   color: #FFFFFF;
   text-decoration: none;
 }
 
 .btn-light:active {
-  background-color: #7E7F9A;
+  background-color: #BDCCD8;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
   text-decoration: none;
@@ -112,26 +112,26 @@ h2 {
 
 /*NEGATIVE COMMENT BUTTON*/
 .btn-warning {
-  background-color: #7A8A6C;
+  background-color: #7B8473;
   border: none;
 
 }
 
 .btn-warning:hover {
-  background-color: #BDAB7D;
+  background-color: #A1A999;
   color: #FFFFFF;
   text-decoration: none;
 }
 
 .btn-warning:active {
-  background-color: #BDAB7D;
+  background-color: #A1A999;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
   text-decoration: none;
 }
 
 .btn-warning:focus {
-  background-color: #BDAB7D;
+  background-color: #A1A999;
 }
 
 /* BACK BUTTON */
